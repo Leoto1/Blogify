@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,500,800|Lobster+Two');
+a{
+  text-decoration: none;
+  color:white;
+}
 body {
 	margin: 0;
 	background: #222;
@@ -175,6 +179,16 @@ input[type=submit]:hover {
   grid-auto-flow: dense;
 }
 
+.show-container{
+  width:60%;
+  margin:0 auto;
+}
+
+.show-title{
+  font-size:25px;
+  padding:20px 0;
+}
+
 @media (max-width:760px){
   .ham{
   display: block ;
@@ -206,4 +220,8 @@ input[type=submit]:hover {
         width: 100%;
         margin-top: 0;
     }
+
+  .show-container{
+    width:90%;
+  }
 }

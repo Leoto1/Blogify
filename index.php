@@ -14,16 +14,18 @@ if($result)
 {
   while($row = mysqli_fetch_array($result))
   {
-
 ?>
-<div class="card">
-  <img src="<?php echo $row["image"] ?>" alt="Avatar" style="width:100%">
-  <div class="card-container">
-    <h4 class="blog-title"><b><?php echo $row["title"]?></b></h4> 
-    <p><?php echo substr($row["description"],0,100)?>...</p> 
-  </div>
-</div>
-
+  <a href="/show.php?code=<?php echo $row['id']?>">
+    <div class="card">
+      <img src="<?php echo $row['image'] ?>" alt="Image" style="width:100%">
+      <div class="card-container">
+        <h4 class="blog-title"><b>
+            <?php echo $row["title"]?></b></h4>
+        <p>
+          <?php echo substr($row["description"],0,200)?>...</p>
+      </div>
+    </div>
+  </a>
 <?php
  }
 }
