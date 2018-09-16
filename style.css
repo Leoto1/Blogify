@@ -7,7 +7,7 @@ body {
   color:white;
 }
 .container {
-	width: 80%;
+	width: 90%;
   margin: 0 auto;
 }
 
@@ -27,8 +27,9 @@ header::after {
 
 .logo {
   float: left;
-  padding: 0px 0;
+  padding: 0;
   font-family: 'Lobster Two', cursive;
+  color:white;
 }
 
 nav {
@@ -147,7 +148,34 @@ input[type=submit]:hover {
     clear: both;
 }
 
-@media screen and (max-width:760px){
+.card {
+    box-shadow: 0 4px 8px 0 rgba(255,255,255,0.2);
+    height:auto;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.4);
+}
+
+.card-container {
+    padding: 2px 16px;
+}
+
+.blog-title{
+  color: #ff2b4e;
+  font-size:18px;
+  font-weight: 800;
+}
+
+.grid{
+  display:grid;
+  grid-gap: 18px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,3fr));
+  grid-auto-flow: dense;
+}
+
+@media (max-width:760px){
   .ham{
   display: block ;
   align-self: flex-end;

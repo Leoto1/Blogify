@@ -1,3 +1,8 @@
+<?php
+include_once(__DIR__.'\..\includes\dbh.inc.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +16,7 @@
 <body>
     <header>
     <div class="container">
-      <h2 class="logo">Blogify</h2>
+      <a href="/"><h2 class="logo">Blogify</h2></a>
       <div class="ham">
         <i class="fa fa-bars toggle"></i>
       </div>

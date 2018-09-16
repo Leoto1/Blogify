@@ -2,7 +2,7 @@
   include 'partials/header.php'
 ?>
 <div class="container form-container">
-  <form >
+  <form action="includes/newblog.inc.php" method="POST">
     <div class="row">
       <div class="col-25">
         <label for="title">Title</label>
