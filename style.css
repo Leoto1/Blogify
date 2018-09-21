@@ -101,12 +101,17 @@ textarea{
     box-sizing: border-box;
 }
 
-input[type=text], textarea {
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ff2b4e;
     border-radius: 4px;
     resize: vertical;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 label {
@@ -189,6 +194,15 @@ input[type=submit]:hover {
   padding:20px 0;
 }
 
+.login-container{
+  max-width:700px;
+  margin:0 auto;
+  padding:10px;
+  border: solid;
+  border: 1px solid #ff2b4e;
+  border-radius: 4px;
+}
+
 @media (max-width:760px){
   .ham{
   display: block ;
@@ -224,4 +238,8 @@ input[type=submit]:hover {
   .show-container{
     width:90%;
   }
+  .login-container {
+    width:90%;
+  }
+
 }

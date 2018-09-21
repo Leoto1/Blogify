@@ -1,5 +1,6 @@
 <?php
-include_once(__DIR__.'\..\includes\dbh.inc.php');
+  include_once(__DIR__.'\..\includes\dbh.inc.php');
+  session_start();
 ?>
 
 
@@ -26,12 +27,18 @@ include_once(__DIR__.'\..\includes\dbh.inc.php');
       }
       document.querySelector('.toggle').addEventListener('click', toggler );
       </script>
-      <nav class="">
+      <nav>
         <ul>
-          <li><a href="/new.php">Create a blog</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Logout</a></li>
+        <?php
+        if(isset($_SESSION['username'])){
+            echo '<li><a href="/new.php">Create a blog</a></li>
+          <li><a href="/includes/logout.inc.php">Logout</a></li>';
+          }else{
+            echo '<li><a href="/new.php">Create a blog</a></li>
+          <li><a href="/signup.php">Sign Up</a></li>
+          <li><a href="/login.php">Log In</a></li>';
+          }
+        ?>
         </ul>
       </nav>
     </div>

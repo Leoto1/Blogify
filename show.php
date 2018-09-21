@@ -13,7 +13,7 @@
         <?php echo $row['title'] ?>
     </div>
     <div class="show-description">
-        <?php echo $row['description'] ?>
+        <?php echo nl2br($row['description']) ?>
     </div>
 </div>
 
