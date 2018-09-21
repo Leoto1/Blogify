@@ -11,6 +11,8 @@ if($_GET){
 
   }elseif($_GET['m']=="invalidpass"){
     $message = "Please type a valid Password !!";
+  }elseif($_GET['m']=="loginrequired"){
+    $message = "You need to be loggedin to do that !!";
   }
   echo "<div class='container' >".$message."</div>";
 }
