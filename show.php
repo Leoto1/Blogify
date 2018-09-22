@@ -6,7 +6,32 @@
     $query = "SELECT * FROM blog WHERE id={$id};";
     $result = mysqli_query($conn,$query);
     $row = mysqli_fetch_array($result);
+    $query = "SELECT likes FROM users WHERE id={$_SESSION['u_id']};";
+    $result = mysqli_query($conn,$query);
+    $likesrow = mysqli_fetch_array($result);
+    $arrlikes = explode(',', $likesrow['likes']);
+    $liked=array_search($id,$arrlikes);
 ?>
+<?php
+if(!empty($liked)||$arrlikes[0]==$id){
+    echo
+'<a href="/includes/likes.inc.php?code='.$id.'&liked=T&pos='.$liked.'">
+<div class="like">
+<i class="fa fa-heart" aria-hidden="true"></i>
+</div>
+</a>';
+}else{
+echo
+'<a href="/includes/likes.inc.php?code='.$id.'&liked=F">
+<div class="like">
+<i class="fa fa-heart-o" aria-hidden="true"></i>
+</div>
+</a>';
+}
+
+?>
+
+
 <?php if($row['u_id']==$_SESSION['u_id']){
     echo ' <div class="container">
         <div class="flash warning"> 
