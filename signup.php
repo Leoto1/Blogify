@@ -1,5 +1,6 @@
 <?php 
-  include 'partials/header.php'
+  include 'partials/header.php';
+  if(!isset($_SESSION['username'])){
 ?>
 <?php
 
@@ -49,5 +50,8 @@ if($_GET){
 </div>
 
 <?php 
+  }else{
+    header("Location: /index.php");
+  }
   include 'partials/footer.php'
 ?>

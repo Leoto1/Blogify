@@ -179,7 +179,7 @@ input[type=submit]:hover {
 
 .grid{
   display:grid;
-  grid-gap: 18px;
+  grid-gap: 15px;
   grid-template-columns: repeat(auto-fit,minmax(250px,3fr));
   grid-auto-flow: dense;
 }
@@ -202,6 +202,30 @@ input[type=submit]:hover {
   border: 1px solid #ff2b4e;
   border-radius: 4px;
 }
+
+.flash {
+  display: inline-flex;
+  width: 100%;
+  height:auto;
+  border: 1px solid white;
+  border-radius: 4px;
+  text-align: center;
+  justify-content:center;
+  font-weight: 400;
+  padding:5px;
+}
+
+.flash input {
+  border-width: 1px;
+  float: none;
+  padding:5px;
+}
+
+.warning{
+  color:yellow;
+  border-color: yellow
+}
+
 
 @media (max-width:760px){
   .ham{
@@ -240,6 +264,9 @@ input[type=submit]:hover {
   }
   .login-container {
     width:90%;
+  }
+  .flash input {
+    width:auto;
   }
 
 }

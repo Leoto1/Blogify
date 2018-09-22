@@ -1,5 +1,6 @@
 <?php 
-  include 'partials/header.php'
+  include 'partials/header.php';
+  if(!isset($_SESSION['username'])){
 ?>
 <?php
 
@@ -8,7 +9,6 @@ if($_GET){
     $message =  "Please don't leave any field empty!";
   }elseif($_GET['m']=="invalidname"){
     $message =  "Please type a valid E-mail/Username !!";
-
   }elseif($_GET['m']=="invalidpass"){
     $message = "Please type a valid Password !!";
   }elseif($_GET['m']=="loginrequired"){
@@ -46,5 +46,8 @@ if($_GET){
 </div>
 
 <?php 
+  }else{
+    header("Location: /index.php");
+  }
   include 'partials/footer.php'
 ?>

@@ -29,7 +29,7 @@
       </script>
       <nav>
         <ul>
-        <li><a href="/includes/isloggedin.inc.php?p=new.php">Create a blog</a></li>
+        <li><a href="/new.php">Create a blog</a></li>
         <?php
         if(isset($_SESSION['username'])){
             echo '<li><a href="/includes/logout.inc.php">Logout</a></li>';

@@ -1,5 +1,9 @@
 <?php 
-  include 'partials/header.php'
+  include 'partials/header.php';
+if(!isset($_SESSION['username'])){
+    header("Location: /login.php?m=loginrequired");
+}else{
+   
 ?>
 <div class="container form-container">
   <form action="includes/newblog.inc.php" method="POST">
@@ -28,11 +32,12 @@
       </div>
     </div>
     <div class="row">
-      <input type="submit" value="Submit">
+      <input type="submit" name='submit' value="Submit">
     </div>
   </form>
 </div>
 
 <?php 
+}
   include 'partials/footer.php'
 ?>
