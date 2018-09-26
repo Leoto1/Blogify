@@ -6,23 +6,31 @@ if($_POST['submit'])
         $email = mysqli_real_escape_string($conn,$_POST['email']);
         $password = mysqli_real_escape_string($conn,$_POST['password']);
         if(empty($email) || empty($password)){
-            header("Location: ../login.php?m=empty");
+           $message =  "Please don't leave any field empty!";
+            $_SESSION['error'] = $message;
+            header("Location: ../login.php");
         }else{
             $result = mysqli_query($conn,"SELECT * FROM users where email='".$email."'OR username='".$email."';");
             $row = mysqli_fetch_array($result);
             if(count($row) < 1)
             { 
-                header("Location: ../login.php?m=invalidname");
+                $message =  "E-mail/Username is incorrect";
+            $_SESSION['error'] = $message;
+            header("Location: ../login.php");
             }else{
                 if($row){
                     $hashcheck=password_verify($password,$row['password']);
                     if($hashcheck == false){
-                        header("Location: ../login.php?m=invalidpass");
+                       $message =  "Password is incorrect";
+                        $_SESSION['error'] = $message;
+                        header("Location: ../login.php");
                     }elseif($hashcheck == true){
                         $_SESSION['username']=$row['username'];
                         $_SESSION['email']=$row['email'];
                         $_SESSION['u_id']=$row['id'];
-                        header("Location: ../index.php?login=successful");
+                        $message = "You're logged in Successfully";
+                        $_SESSION['success'] = $message;
+                        header("Location: ../");
                     }
                 }
             }   

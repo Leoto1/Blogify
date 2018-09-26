@@ -21,8 +21,8 @@ if($result)
       <div class="card-container">
         <h4 class="blog-title"><b>
             <?php echo $row["title"]?></b></h4>
-        <p>
-          <?php echo substr($row["description"],0,200)?>...</p>
+        <p><?php echo substr($row["description"],0,200)?>...</p>
+          <div> by <em style="color:#ff2b4e;"><?php echo $row['author']?></em></div>
       </div>
     </div>
   </a>

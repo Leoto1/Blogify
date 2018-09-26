@@ -37,6 +37,8 @@ if(isset($_SESSION['username'])){
         header('Location: /index.php');
     }
 }else{
-    header("Location: /login.php?m=loginrequired");
+    $message = "You need to be loggedin to do that !!";
+    $_SESSION['error']= $message;
+    header("Location: /login.php");
 }
 ?>

@@ -12,15 +12,30 @@ if(isset($_POST['submit']))
         $result = mysqli_query($conn,$query);
         $numResults = mysqli_num_rows($result);
         if(empty($username) || empty($email) || empty($password)){
-            header("Location: ../signup.php?m=empty");
+            $message =  "Please don't leave any field empty!";
+            $_SESSION['error'] = $message;
+            header("Location: ../signup.php");
+        }
+        elseif ($username == trim($username) && strpos($username, ' ') !== false) {
+            $message = "Don't use space in the username";
+            $_SESSION['error'] = $message;
+            header("Location: ../signup.php");
         }
         elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
         {
-            header("Location: ../signup.php?m=invalidemail");
+            $message =  "Invalid email address please type a valid email!!";        
+            $_SESSION['error'] = $message;
+            header("Location: ../signup.php");
+        }elseif(strlen($password)<8) {
+            $message='Password must be atleast 8 characters long!';
+            $_SESSION['error'] = $message;
+            header("Location: ../signup.php");
         }
         elseif($numResults>=1)
         {
-            header("Location: ../signup.php?m=exists");
+            $message = "Username or Email already exist!!";
+            $_SESSION['error'] = $message;
+            header("Location: ../signup.php");
         }
         else
         {
@@ -32,7 +47,9 @@ if(isset($_POST['submit']))
             $_SESSION['username']=$row['username'];
             $_SESSION['email']=$row['email'];
             $_SESSION['u_id']=$row['id'];
-            header("Location: ../?signup=successfull");
+            $message = "You're logged in Successfully";
+            $_SESSION['success'] = $message;
+            header("Location: ../");
         }
     }
 }else{

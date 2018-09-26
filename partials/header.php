@@ -46,3 +46,14 @@
   <br>
   <br>
   <br>
+<?php 
+if(isset($_SESSION['error'])){
+  echo "<div class='container'><div class='flash error'>".$_SESSION['error']."</div></div>";
+  unset($_SESSION['error']);
+}
+
+if(isset($_SESSION['success'])){
+  echo "<div class='container'><div class='flash success'>".$_SESSION['success']."</div></div>";
+  unset($_SESSION['success']);
+}
+?>

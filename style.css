@@ -72,7 +72,7 @@ nav a::after {
   background-color: #444;
 
   position: absolute;
-  transition: all ease-in-out 250ms;
+  transition: all ease-in-out 100ms;
   width: 0%;
 
 }
@@ -170,6 +170,10 @@ input[type=submit]:hover {
     padding: 2px 16px;
 }
 
+.card img{
+  height:175px;
+  object-fit: cover;
+}
 .blog-title{
   color: #ff2b4e;
   font-size:18px;
@@ -179,7 +183,7 @@ input[type=submit]:hover {
 .grid{
   display:grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit,minmax(250px,3fr));
+  grid-template-columns: repeat(auto-fill,minmax(250px,3fr));
   grid-auto-flow: dense;
 }
 
@@ -212,6 +216,7 @@ input[type=submit]:hover {
   justify-content:center;
   font-weight: 400;
   padding:5px;
+  margin-bottom:18px;
 }
 
 .flash input {
@@ -222,9 +227,21 @@ input[type=submit]:hover {
 
 .warning{
   color:yellow;
+  background-color: rgba(255, 255, 0, 0.253);
   border-color: yellow
 }
 
+.error {
+  color: red;
+  background-color:rgba(255, 0, 0, 0.253);
+  border-color: red;
+}
+
+.success {
+  color: rgb(0, 255, 0);
+  background-color: rgba(0,255, 0, 0.253);
+  border-color: rgb(0, 255, 0);
+}
 .like{
   position:fixed;
   right:10%;

@@ -2,21 +2,7 @@
   include 'partials/header.php';
   if(!isset($_SESSION['username'])){
 ?>
-<?php
 
-if($_GET){
-  if($_GET['m']=="empty"){
-    $message =  "Please don't leave any field empty!";
-  }elseif($_GET['m']=="invalidname"){
-    $message =  "Please type a valid E-mail/Username !!";
-  }elseif($_GET['m']=="invalidpass"){
-    $message = "Please type a valid Password !!";
-  }elseif($_GET['m']=="loginrequired"){
-    $message = "You need to be loggedin to do that !!";
-  }
-  echo "<div class='container' >".$message."</div>";
-}
-?>
 
 <div class="login-container">
    <div style="color:#ff2b4e;text-align:center;"> <h1>Login</h1></div>
