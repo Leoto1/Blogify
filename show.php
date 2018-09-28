@@ -1,5 +1,5 @@
 <?php 
-  include 'partials/header.php'
+  include 'partials/header.php';
 ?>
 <?php
     $id=$_GET['code'];
@@ -39,7 +39,7 @@ echo
 if(isset($_SESSION['username'])){
     if($row['u_id']==$_SESSION['u_id']){
         echo '<div class="container">
-            <div class="flash warning"> 
+            <div class="flash warning">             
             <form action="" method="post">
             It seems you own this blog. Do want to 
             <input type="hidden" name="auth" value="T">
@@ -61,7 +61,8 @@ if(isset($_SESSION['username'])){
         <?php echo $row['title']; ?>
     </div>
     <hr>
-    <div style="display:inline-block;width:100%;"><div style="float:left;"> by <em style="color:#ff2b4e;"><?php echo $row['author']?></em></div>
+    <div style="display:inline-block;width:100%;">
+    <div style="float:left;"> by <em style="color:#ff2b4e;"><?php echo $row['author']?></em> (<em><?php echo date('M j Y g:i A', strtotime($row['bdate']));?>)</em></div>
     <div style="float:right;"><?php echo $row['likes']?> <em style="color:#ff2b4e;">likes</em></div>
     </div>
     <hr>

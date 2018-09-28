@@ -158,7 +158,7 @@ input[type=submit]:hover {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(255,255,255,0.2);
-    height:auto;
+    position: relative;
     transition: 0.3s;
 }
 
@@ -257,6 +257,52 @@ input[type=submit]:hover {
   font-size:40px;
   right:9.5%;
   bottom:9%;
+}
+
+.landing{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("asset/landing.jpg");
+  opacity: 0.75;
+}
+.landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 20vh;
+  color: #fff;
+  font-family: 'Lobster Two',cursive;
+}
+
+.landing-header h1 {
+  color:#ff2b4e;
+  font-size: 50px
+}
+
+.landing-header .desc{
+  font-size:25px;
+  margin-bottom:20px;
+}
+.landing-header .button{
+  display: inline-block;
+  background-color: transparent;
+  color:#ff2b4e;
+  font-size:25px;
+  padding: 5px 20px;
+  border: 2px solid #ff2b4e;
+  border-radius: 4px;
+}
+.landing-header .button:hover{
+  background-color: #ff2b4e;
+  color: white;
 }
 
 @media (max-width:760px){

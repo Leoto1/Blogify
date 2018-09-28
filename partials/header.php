@@ -17,7 +17,7 @@
 <body>
     <header>
     <div class="container">
-      <a href="/"><h2 class="logo">Blogify</h2></a>
+      <a href="/landing.php"><h2 class="logo">Blogify</h2></a>
       <div class="ham">
         <i class="fa fa-bars toggle"></i>
       </div>
